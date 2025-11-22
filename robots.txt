@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://TON_PSEUDO.github.io/tshadospbusiness-ship-it/sitemap.xml
 
