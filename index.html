@@ -1,91 +1,838 @@
-<html>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-<body bgcolor="#FF6666">
-<h1>La programmation</h1>
-<font size="9" color="0000FF">	
-<p align="center">La programmation</p>
-<font color="FFA500">
-<p align="left">Bienvenue sur le super site de la programmation !</p>
-<font color="008000">
-<p align="left"><i>Apprends à programmer et fais ton propre site web !</i>😀</p>
-<p><a href="index.html">Accueil</a>
-<a href="codes.html">Codes</a>
-<a href="programmation.html">Programmation</a>
-<a href="défis.html">Défis</a>
-<a href="SITE.html">Fais un site web !</a>
-<a href="merci.html">Merciii!!</a></p>
-<img src="eee.jfif" alt="La programmation c´est aussi ça">
-<img src="qqq.gif" width="200" height="auto" alt="Bienvenue du visiteur sur notre site.">
-<font color=FFA500>
-Tu vas apprendre à programmer et à faire ton propre site !!!
-</font>
-</body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Programmation 🚀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-</html>
+    :root {
+      --bg:       #0d0f1a;
+      --surface:  #141728;
+      --card:     #1a1f38;
+      --border:   #252b4a;
+      --accent:   #7c6af7;
+      --accent2:  #38d9a9;
+      --accent3:  #f7a86a;
+      --text:     #e8eaf6;
+      --muted:    #8890b5;
+      --code-bg:  #0b0d18;
+      --radius:   14px;
+    }
 
-<title>Comment programmer sur Scratch et faire un site web.</title>
-<meta name="description" content="Comment programmer sur Scratch et faire un site web.">
-<link rel="canonical" href="https://tshadospbusiness.github.io/laprogrammation/">
+    html { scroll-behavior: smooth; }
 
-<!-- Open Graph (partage sur réseaux sociaux) -->
-<meta property="og:title" content="">
-<meta property="og:description" content="Comment programmer sur Scratch et faire un site web.">
-<meta property="og:url" content="https://tshadospbusiness-ship-it.github.io/laprogrammation/index.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://tshadospbusiness-ship-it.github.io/laprogrammation/index.htmlpreview.jpg">
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-<!-- Twitter card -->
-<meta name="twitter:card" content="summary_large_image>
+    /* ── STARS BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 50%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 30%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 60%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(2px 2px at 75% 40%, rgba(124,106,247,.4) 0%, transparent 100%),
+        radial-gradient(2px 2px at 25% 45%, rgba(56,217,169,.3) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CRRE34LWE7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,15,26,.85);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 62px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-logo {
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent);
+      white-space: nowrap;
+      margin-right: 16px;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent2); }
+    .nav-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .875rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, background .2s;
+    }
+    .nav-btn:hover { color: var(--text); background: var(--card); }
+    .nav-btn.active {
+      color: var(--accent);
+      background: rgba(124,106,247,.12);
+    }
 
-  gtag('config', 'G-CRRE34LWE7');
-</script>
+    /* ── PAGES ── */
+    .page { display: none; animation: fadein .35s ease; }
+    .page.active { display: block; }
+    @keyframes fadein { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 90px 24px 70px;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-glow {
+      position: absolute;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(124,106,247,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: 'Fira Code', monospace;
+      font-size: .8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      max-width: 520px;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: opacity .2s, transform .15s;
+    }
+    .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-secondary:hover { background: var(--border); }
+
+    /* ── FEATURE GRID ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      position: relative; z-index: 1;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color .25s, transform .2s;
+      cursor: pointer;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .feature-card p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SECTION LAYOUT ── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      position: relative; z-index: 1;
+    }
+    .section-header {
+      margin-bottom: 40px;
+    }
+    .section-eyebrow {
+      font-family: 'Fira Code', monospace;
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .section > p, .section-lead {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+
+    /* ── CODE BLOCK ── */
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 24px 0;
+    }
+    .code-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .code-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .code-dot.r { background: #ff5f56; }
+    .code-dot.y { background: #ffbd2e; }
+    .code-dot.g { background: #27c93f; }
+    .code-label {
+      font-family: 'Fira Code', monospace;
+      font-size: .75rem;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+    .code-body {
+      padding: 22px 24px;
+      font-family: 'Fira Code', monospace;
+      font-size: .85rem;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+    .kw  { color: #c792ea; }
+    .fn  { color: #82aaff; }
+    .str { color: #c3e88d; }
+    .num { color: #f78c6c; }
+    .cm  { color: #546e7a; font-style: italic; }
+    .tag { color: #f07178; }
+    .atr { color: #ffcb6b; }
+
+    /* ── STEP CARDS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s;
+    }
+    .step:hover { border-color: var(--accent); }
+    .step-num {
+      min-width: 40px; height: 40px;
+      background: rgba(124,106,247,.15);
+      border: 1px solid rgba(124,106,247,.3);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: .95rem;
+    }
+    .step-content h4 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .step-content p { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+    .step-content a { color: var(--accent2); text-decoration: none; }
+    .step-content a:hover { text-decoration: underline; }
+
+    /* ── CHALLENGE CARDS ── */
+    .challenges { display: flex; flex-direction: column; gap: 18px; }
+    .challenge {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: border-color .2s, transform .2s;
+    }
+    .challenge:hover { border-color: var(--accent3); transform: translateX(4px); }
+    .challenge-badge {
+      min-width: 56px; height: 56px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+    }
+    .badge-easy   { background: rgba(56,217,169,.12); border: 1px solid rgba(56,217,169,.3); }
+    .badge-medium { background: rgba(247,168,106,.12); border: 1px solid rgba(247,168,106,.3); }
+    .badge-hard   { background: rgba(124,106,247,.12); border: 1px solid rgba(124,106,247,.3); }
+    .challenge-info h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .challenge-info p  { font-size: .85rem; color: var(--muted); line-height: 1.55; }
+    .challenge-tag {
+      margin-left: auto;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-easy   { background: rgba(56,217,169,.12); color: var(--accent2); }
+    .tag-medium { background: rgba(247,168,106,.12); color: var(--accent3); }
+    .tag-hard   { background: rgba(124,106,247,.12); color: var(--accent); }
+
+    /* ── INFO CARDS ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .info-card h4 { font-size: .95rem; font-weight: 600; margin-bottom: 10px; color: var(--accent2); }
+    .info-card p  { font-size: .85rem; color: var(--muted); line-height: 1.65; }
+    .info-card ul { list-style: none; font-size: .85rem; color: var(--muted); line-height: 1.65; }
+    .info-card ul li { padding: 3px 0; }
+    .info-card ul li::before { content: '›  '; color: var(--accent); font-weight: 700; }
+
+    /* ── MERCI PAGE ── */
+    .merci-center {
+      text-align: center;
+      padding: 80px 24px;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .merci-icon { font-size: 5rem; margin-bottom: 24px; animation: bounce 2s infinite; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+    .merci-center h2 { font-size: 2.4rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 16px; }
+    .merci-center p  { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+    .confetti {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+      font-size: 1.8rem;
+    }
+    .confetti span { animation: spin 3s linear infinite; display: inline-block; }
+    .confetti span:nth-child(2) { animation-delay: .5s; animation-duration: 2.2s; }
+    .confetti span:nth-child(3) { animation-delay: 1s; animation-duration: 2.8s; }
+    @keyframes spin {
+      0%   { transform: rotate(0deg) scale(1); }
+      50%  { transform: rotate(180deg) scale(1.2); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0 24px;
+    }
+
+    /* ── SCRATCH VISUAL ── */
+    .scratch-ui {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 28px 0;
+    }
+    .scratch-toolbar {
+      background: #ff6b2b;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: .9rem;
+    }
+    .scratch-body {
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      min-height: 180px;
+    }
+    .scratch-panel {
+      padding: 16px;
+      border-right: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .scratch-panel h5 { color: var(--text); margin-bottom: 10px; font-size: .8rem; }
+    .scratch-block {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: .75rem;
+      font-weight: 600;
+      margin: 3px 0;
+      display: block;
+      width: fit-content;
+    }
+    .sb-motion   { background: #4c97ff; color: #fff; }
+    .sb-looks    { background: #9966ff; color: #fff; }
+    .sb-sound    { background: #cf63cf; color: #fff; }
+    .sb-event    { background: #ffab19; color: #fff; }
+    .sb-control  { background: #ffab19; color: #fff; }
+    .sb-operator { background: #59c059; color: #fff; }
+    .scratch-stage {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: rgba(255,255,255,.02);
+    }
+    .scratch-sprites {
+      padding: 16px;
+      border-left: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .scratch-sprites h5 { color: var(--text); margin-bottom: 10px; font-size: .8rem; }
+    .sprite-thumb {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .scratch-body { grid-template-columns: 1fr; }
+      .scratch-panel, .scratch-sprites { display: none; }
+      .challenge { flex-wrap: wrap; }
+      .challenge-tag { margin-left: 0; }
+    }
+  </style>
 </head>
+<body>
 
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">&lt;<span>code</span>/&gt;</div>
+    <button class="nav-btn active" onclick="showPage('accueil', this)">🏠 Accueil</button>
+    <button class="nav-btn" onclick="showPage('codes', this)">💻 Codes</button>
+    <button class="nav-btn" onclick="showPage('programmation', this)">🤖 Programmation</button>
+    <button class="nav-btn" onclick="showPage('defis', this)">🏆 Défis</button>
+    <button class="nav-btn" onclick="showPage('site', this)">🌐 Fais un site !</button>
+    <button class="nav-btn" onclick="showPage('merci', this)">🙏 Merci</button>
+  </div>
+</nav>
 
+<!-- ══ PAGE ACCUEIL ══ -->
+<div class="page active" id="page-accueil">
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-eyebrow">// Bienvenue sur la programmation</div>
+    <h1>Apprends à <span class="grad">coder</span><br/>et crée tes propres projets</h1>
+    <p>De tes premiers blocs Scratch à ton tout premier site web — tu vas tout apprendre ici, étape par étape, et c'est complètement gratuit !</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="showPage('programmation', document.querySelectorAll('.nav-btn')[2])">Commencer maintenant</button>
+      <button class="btn-secondary" onclick="showPage('codes', document.querySelectorAll('.nav-btn')[1])">Voir les codes</button>
+    </div>
+  </div>
 
+  <div class="feature-grid">
+    <div class="feature-card" onclick="showPage('codes', document.querySelectorAll('.nav-btn')[1])">
+      <span class="feature-icon">🧩</span>
+      <h3>Scratch pour débuter</h3>
+      <p>Commence par des blocs visuels et programme tes premiers jeux sans écrire une seule ligne de code texte.</p>
+    </div>
+    <div class="feature-card" onclick="showPage('programmation', document.querySelectorAll('.nav-btn')[2])">
+      <span class="feature-icon">🎮</span>
+      <h3>Crée tes jeux</h3>
+      <p>Suis des vidéos guidées et fabrique tes propres jeux interactifs. Des plateformers aux quiz, tout est possible !</p>
+    </div>
+    <div class="feature-card" onclick="showPage('site', document.querySelectorAll('.nav-btn')[4])">
+      <span class="feature-icon">🌐</span>
+      <h3>Fais ton site web</h3>
+      <p>Apprends le HTML et publie ta propre page sur internet. C'est plus simple qu'il n'y paraît !</p>
+    </div>
+    <div class="feature-card" onclick="showPage('defis', document.querySelectorAll('.nav-btn')[3])">
+      <span class="feature-icon">🏆</span>
+      <h3>Relève des défis</h3>
+      <p>Mets tes nouvelles compétences à l'épreuve avec des challenges progressifs, du niveau facile au niveau expert.</p>
+    </div>
+  </div>
+</div>
 
+<!-- ══ PAGE CODES ══ -->
+<div class="page" id="page-codes">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">// introduction</div>
+      <h2>C'est quoi un code ?</h2>
+      <p class="section-lead">Un code, c'est une <strong>instruction</strong> que tu donnes à l'ordinateur pour qu'il exécute quelque chose. L'ordinateur est très obéissant, mais il faut lui parler dans sa langue !</p>
+    </div>
 
+    <div class="divider" style="margin:0 0 32px;"></div>
 
+    <h3 style="margin-bottom:18px; font-size:1.2rem;">🐱 Commencer avec Scratch</h3>
+    <p style="color:var(--muted); margin-bottom:20px; line-height:1.7;">
+      Si tu commences la programmation, <strong style="color:var(--text)">commence par Scratch</strong> ! C'est un outil gratuit où tu assembles des blocs colorés comme des Lego — pas besoin d'écrire du texte compliqué. Tu peux créer des jeux, des animations et des histoires.
+    </p>
 
+    <!-- Scratch UI simulé -->
+    <div class="scratch-ui">
+      <div class="scratch-toolbar">
+        <span>🐱</span> Scratch — Éditeur de projet
+        <span style="margin-left:auto; font-size:.8rem; font-weight:400; opacity:.8">Projet : Mon premier jeu</span>
+      </div>
+      <div class="scratch-body">
+        <div class="scratch-panel">
+          <h5>📦 Blocs disponibles</h5>
+          <span class="scratch-block sb-event">Quand 🚩 cliqué</span>
+          <span class="scratch-block sb-motion">avancer de 10 pas</span>
+          <span class="scratch-block sb-motion">tourner de 15°</span>
+          <span class="scratch-block sb-looks">dire "Bonjour !"</span>
+          <span class="scratch-block sb-control">répéter 10 fois</span>
+          <span class="scratch-block sb-operator">+ - × ÷</span>
+        </div>
+        <div class="scratch-stage">🐱</div>
+        <div class="scratch-sprites">
+          <h5>🎭 Sprites</h5>
+          <div class="sprite-thumb">🐱</div>
+          <div class="sprite-thumb" style="opacity:.5">+</div>
+        </div>
+      </div>
+    </div>
 
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>🖥️ Comment accéder à Scratch ?</h4>
+        <ul>
+          <li>Ouvre un navigateur (Chrome, Firefox…)</li>
+          <li>Tape <strong>«&nbsp;Scratch en ligne&nbsp;»</strong></li>
+          <li>Va sur <strong>scratch.mit.edu</strong></li>
+          <li>Crée un compte gratuit</li>
+          <li>Ou installe l'application Scratch</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>📚 Les blocs Scratch par catégorie</h4>
+        <ul>
+          <li><span style="color:#4c97ff">■</span> <strong>Mouvement</strong> — déplacer ton sprite</li>
+          <li><span style="color:#9966ff">■</span> <strong>Apparence</strong> — changer l'aspect</li>
+          <li><span style="color:#cf63cf">■</span> <strong>Son</strong> — jouer des sons</li>
+          <li><span style="color:#ffab19">■</span> <strong>Événements</strong> — démarrer des actions</li>
+          <li><span style="color:#59c059">■</span> <strong>Opérateurs</strong> — calculs et logique</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>🚀 Et après Scratch ?</h4>
+        <p>Quand tu maîtrises Scratch, tu peux apprendre des <strong>langages textuels</strong> comme Python (idéal pour les débutants), JavaScript (pour les sites web) ou encore C++ (pour les jeux avancés).</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ══ PAGE PROGRAMMATION ══ -->
+<div class="page" id="page-programmation">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">// tutoriel</div>
+      <h2>Programme ton premier jeu</h2>
+      <p class="section-lead">Suis ces étapes pour créer ton premier mini-jeu sur Scratch. Clique sur les liens vidéo pour voir exactement quoi faire !</p>
+    </div>
 
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Crée ton compte Scratch</h4>
+          <p>Rends-toi sur <a href="https://scratch.mit.edu" target="_blank">scratch.mit.edu</a>, clique sur «&nbsp;Rejoindre Scratch&nbsp;» et crée ton compte gratuit. Tu pourras sauvegarder tous tes projets en ligne !</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Découvre l'interface</h4>
+          <p>L'écran est divisé en 3 zones : les <strong>blocs</strong> à gauche (tes outils), la <strong>zone de code</strong> au centre (tu glisses tes blocs ici), et la <strong>scène</strong> à droite (là où ton jeu s'affiche).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Regarde le tutoriel vidéo 🎬</h4>
+          <p>Cette vidéo te montre comment créer un petit jeu complet sur Scratch, pas à pas. C'est la meilleure façon d'apprendre !</p>
+          <a href="https://youtu.be/BZjAKp_5i5Y?si=qUJGAQh1bfUFfVnQ" target="_blank" style="display:inline-block; margin-top:10px; background:rgba(124,106,247,.15); border:1px solid rgba(124,106,247,.4); color:var(--accent); padding:8px 16px; border-radius:8px; font-weight:600; font-size:.9rem; text-decoration:none;">▶ Voir la vidéo tutoriel</a>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Reproduis puis modifie</h4>
+          <p>Commence par copier exactement ce que montre la vidéo, puis <strong>expérimente</strong> : change les couleurs, la vitesse, les sons. C'est comme ça qu'on apprend vraiment !</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Partage ton projet !</h4>
+          <p>Sur Scratch, tu peux publier ton jeu et des millions de personnes dans le monde pourront y jouer. Clique sur «&nbsp;Partager&nbsp;» dans l'éditeur pour le rendre public !</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="code-block" style="margin-top:36px;">
+      <div class="code-header">
+        <div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div>
+        <span class="code-label">exemple-scratch-logique.txt</span>
+      </div>
+      <div class="code-body">
+<span class="cm">// Un exemple de logique Scratch en pseudo-code</span>
 
+<span class="kw">Quand</span> 🚩 <span class="fn">cliqué</span>
+  <span class="kw">répéter</span> <span class="fn">indéfiniment</span>
+    <span class="kw">si</span> <span class="fn">touche flèche droite pressée</span> <span class="kw">alors</span>
+      <span class="fn">avancer de</span> <span class="num">10</span> <span class="str">pas</span>
+    <span class="kw">fin si</span>
+    <span class="kw">si</span> <span class="fn">touche espace pressée</span> <span class="kw">alors</span>
+      <span class="fn">jouer son</span> <span class="str">"pop"</span>
+      <span class="fn">dire</span> <span class="str">"Bravo !"</span> <span class="kw">pendant</span> <span class="num">2</span> <span class="str">secondes</span>
+    <span class="kw">fin si</span>
+  <span class="kw">fin répéter</span>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ══ PAGE DÉFIS ══ -->
+<div class="page" id="page-defis">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">// challenges</div>
+      <h2>Relève les défis 🏆</h2>
+      <p class="section-lead">Maintenant que tu as appris des choses sur Scratch, il est temps de mettre tes compétences à l'épreuve ! Choisis un défi selon ton niveau.</p>
+    </div>
 
+    <div class="challenges">
+      <div class="challenge">
+        <div class="challenge-badge badge-easy">⚡</div>
+        <div class="challenge-info">
+          <h4>Mini-jeu en 1 heure</h4>
+          <p>Programme un jeu simple en une heure chrono ! Un sprite qui se déplace, un score, des obstacles. Concentre-toi sur l'essentiel et ne te perds pas dans les détails.</p>
+        </div>
+        <span class="challenge-tag tag-easy">Facile</span>
+      </div>
+      <div class="challenge">
+        <div class="challenge-badge badge-medium">🎬</div>
+        <div class="challenge-info">
+          <h4>2 mini-animations en 3 heures</h4>
+          <p>Crée deux courtes animations sur Scratch. Par exemple : un coucher de soleil et un personnage qui danse. Soigne les détails visuels et les transitions !</p>
+        </div>
+        <span class="challenge-tag tag-medium">Intermédiaire</span>
+      </div>
+      <div class="challenge">
+        <div class="challenge-badge badge-hard">🚀</div>
+        <div class="challenge-info">
+          <h4>Grand jeu complet — ton chef-d'œuvre !</h4>
+          <p>Prends tout le temps qu'il te faut pour créer un vrai jeu avec plusieurs niveaux, des scores, des sons, et des personnages soignés. Ce projet peut prendre des jours, voire des semaines.</p>
+        </div>
+        <span class="challenge-tag tag-hard">Expert</span>
+      </div>
+      <div class="challenge">
+        <div class="challenge-badge badge-easy">🌐</div>
+        <div class="challenge-info">
+          <h4>Bonus : fais ta première page HTML</h4>
+          <p>Crée une page web simple avec un titre, un paragraphe et une image. Utilise un éditeur de texte et ouvre le fichier dans ton navigateur pour voir le résultat !</p>
+        </div>
+        <span class="challenge-tag tag-easy">Facile</span>
+      </div>
+    </div>
 
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-top:32px; text-align:center;">
+      <div style="font-size:2rem; margin-bottom:12px;">💡</div>
+      <h3 style="margin-bottom:10px;">Astuce de pro</h3>
+      <p style="color:var(--muted); font-size:.9rem; line-height:1.7; max-width:500px; margin:0 auto;">Ne te décourage pas si quelque chose ne fonctionne pas du premier coup. <strong style="color:var(--text)">Même les meilleurs développeurs</strong> font des erreurs et cherchent des solutions. Chaque bug corrigé, c'est une leçon apprise !</p>
+    </div>
+  </div>
+</div>
 
+<!-- ══ PAGE SITE WEB ══ -->
+<div class="page" id="page-site">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">// html & web</div>
+      <h2>Crée ton propre site web</h2>
+      <p class="section-lead">Le web est fait de pages HTML. Apprends à en créer une et publie-la sur internet gratuitement !</p>
+    </div>
 
+    <div class="code-block">
+      <div class="code-header">
+        <div class="code-dot r"></div><div class="code-dot y"></div><div class="code-dot g"></div>
+        <span class="code-label">mon-premier-site.html</span>
+      </div>
+      <div class="code-body">
+<span class="cm">&lt;!-- Ceci est ton premier fichier HTML ! --&gt;</span>
 
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="atr">lang=</span><span class="str">"fr"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mon super site<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bonjour le monde ! 🌍<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Bienvenue sur mon premier site web.<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;a</span> <span class="atr">href=</span><span class="str">"https://scratch.mit.edu"</span><span class="tag">&gt;</span>
+      Visiter Scratch
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+      </div>
+    </div>
 
+    <a href="https://youtu.be/KsCUcBK9q14?si=kIo9D85zZVkoQ0A-" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:rgba(56,217,169,.12); border:1px solid rgba(56,217,169,.35); color:var(--accent2); padding:12px 22px; border-radius:10px; font-weight:600; font-size:.95rem; text-decoration:none; margin-bottom:36px;">
+      ▶ Voir la vidéo : créer une page HTML avec des liens
+    </a>
 
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>🏷️ Les balises HTML essentielles</h4>
+        <ul>
+          <li><code style="color:var(--accent)">&lt;h1&gt;</code> — Titre principal</li>
+          <li><code style="color:var(--accent)">&lt;p&gt;</code> — Paragraphe de texte</li>
+          <li><code style="color:var(--accent)">&lt;a href&gt;</code> — Lien cliquable</li>
+          <li><code style="color:var(--accent)">&lt;img src&gt;</code> — Image</li>
+          <li><code style="color:var(--accent)">&lt;ul&gt; &lt;li&gt;</code> — Liste à puces</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>🌐 Noms de domaine & URLs</h4>
+        <p>Un <strong>nom de domaine</strong> (ex: <em>monsite.com</em>) et une <strong>URL</strong> (ex: <em>http://monsite.com/page/</em>) s'achètent avec l'hébergement web. Des opérateurs comme SFR, Free ou Orange proposent aussi un hébergement.</p>
+      </div>
+      <div class="info-card">
+        <h4>🛠️ Les outils nécessaires</h4>
+        <ul>
+          <li>Un éditeur de texte (VS Code, Notepad++)</li>
+          <li>Un navigateur web pour tester</li>
+          <li>Un logiciel FTP : FileZilla ou RealFTP</li>
+          <li>Un hébergement web (OVH, Infomaniak…)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>🚀 Et après le HTML ?</h4>
+        <p>Le <strong>CSS</strong> te permet de styliser ta page (couleurs, polices, mise en page). Le <strong>JavaScript</strong> ajoute de l'interactivité (boutons, animations). C'est la trinité du web !</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ══ PAGE MERCI ══ -->
+<div class="page" id="page-merci">
+  <div class="merci-center">
+    <div class="merci-icon">🙏</div>
+    <h2>Merciii beaucoup !!</h2>
+    <p>Un grand merci d'avoir visité notre super site sur la programmation ! On espère que tu as appris plein de choses et que tu es prêt(e) à coder de belles créations.</p>
+    <p style="margin-top:16px;">N'oublie pas : chaque grand développeur a commencé exactement là où tu en es aujourd'hui. Continue à explorer, expérimenter, et surtout… <strong style="color:var(--accent2)">prendre du plaisir à coder !</strong> 🚀</p>
+    <div class="confetti">
+      <span>⭐</span><span>🎉</span><span>💻</span>
+    </div>
+    <div style="margin-top:40px;">
+      <button class="btn-primary" onclick="showPage('accueil', document.querySelectorAll('.nav-btn')[0])">← Retour à l'accueil</button>
+    </div>
+  </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script>
+  function showPage(id, btn) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
